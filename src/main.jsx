@@ -2,17 +2,36 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Home from './Components/Home/Home'
+import Root from './Root/Root'
+import Home from './Pages/Home/Home'
+import Donation from './Pages/Donation/Donation'
+import Statistics from './Pages/Statistics/Statistics'
+import ErrorPage from './Pages/ErrorPage/ErrorPage'
 
-const donationCampaingnRouter = createBrowserRouter([
+const donationCampaignRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>
+    element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: "/donation",
+        element: <Donation></Donation>
+      },
+      {
+        path: "/statistics",
+        element: <Statistics></Statistics>
+      }
+    ]
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={donationCampaingnRouter}></RouterProvider>
+    <RouterProvider router={donationCampaignRouter}></RouterProvider>
   </React.StrictMode>,
 )
