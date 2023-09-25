@@ -9,7 +9,6 @@ const Home = () => {
 
     return (
         <div>
-            <h2>This is Home Page</h2>
             <Banner></Banner>
             <HomeCards jsonData={jsonData}></HomeCards>
         </div>
