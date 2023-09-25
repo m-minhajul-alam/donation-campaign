@@ -34,7 +34,7 @@ const Nav = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="normal-case text-xl">Donation Campaign</a>
+                    <img className="w-28 lg:w-40" src={"/src/assets/logo/Logo.png"} alt="" />
                 </div>
 
                 <div className="navbar-end hidden lg:flex">
