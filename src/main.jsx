@@ -26,12 +26,14 @@ const donationCampaignRouter = createBrowserRouter([
       },
       {
         path: "/statistics",
-        element: <Statistics></Statistics>
+        element: <Statistics></Statistics>,
+        loader: () => fetch("/data.json")
+
       },
       {
         path: "/cardDetails/:id",
         element: <CardDetails></CardDetails>,
-        loader: ()=> fetch("/data.json")
+        loader: () => fetch("/data.json")
       }
     ]
   }
