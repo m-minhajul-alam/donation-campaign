@@ -14,12 +14,12 @@ const Donation = () => {
     }, [])
 
     return (
-        <div>
+        <div className="my-8">
 
             {noFound ? <p>{noFound}</p>
                 :
                 <div>
-                    <div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
                         {donations.map(donation => <DonationCard key={donation.id} donation={donation}></DonationCard>)}
                     </div>
                 </div>

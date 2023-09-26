@@ -37,10 +37,10 @@ const CardDetails = () => {
 
 
     return (
-        <div className="my-11 ">
+        <div className="my-7">
             <div className="relative">
-                <img src={photo} alt="Your Image" className="w-full h-full rounded lg:rounded-[30px]" />
-                <div className="absolute inset-0 bg-black opacity-50 mt-auto h-11 lg:h-24 rounded-b-[30px]"></div>
+                <img src={photo} alt="Your Image" className="w-full h-full rounded lg:rounded-xl" />
+                <div className="absolute inset-0 bg-black opacity-50 mt-auto h-11 lg:h-24 rounded-b-xl"></div>
                 <button onClick={handelDonations} style={{ backgroundColor: text_button_bg }} className="absolute rounded text-xs p-1 lg:btn border-none bottom-2 lg:bottom-5 left-2 lg:left-5 lg:text-white text-white">{`Donate $${price}`}</button>
             </div>
             <div className="my-12">
