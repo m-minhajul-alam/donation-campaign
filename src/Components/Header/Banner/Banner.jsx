@@ -1,31 +1,23 @@
-import { useContext, useState } from "react";
-import { SearchValue } from "../../../Root/Root";
-// import { Line } from "recharts";
-// import { Link } from "react-router-dom";
+import { useState } from "react";
 
+const Banner = ({ handleCategoryFilter }) => {
+    const [inputValue, setInputValue] = useState("");
 
-const Banner = () => {
-
-    const [inputSearch, setInputSrarch] = useContext(SearchValue)
-
-    const [inputValue, setInputValue] = useState("")
-
-    const handelInputValue = (e) => {
-        setInputValue(e.target.value)
-    }
-
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+    };
+    const handleSearchClick = () => {
+        handleCategoryFilter(inputValue);
+    };
 
     return (
-        <div className="hero min-h-[70vh]" style={{ backgroundImage: 'url(https://i.ibb.co/rMmzrQZ/Banner-bg.jpg)' }}>
-            <div className="hero-overlay bg-[#fffffff2] bg-opacity-90"></div>
-            <div className="hero-content text-center text-neutral-content">
-                <div>
-                    <h1 className="mb-5 text-4xl font-bold text-black">I Grow By Helping People In Need</h1>
-                    <div className="flex justify-center items-center">
-                        <input type="text" onChange={handelInputValue} placeholder="Search Here... (For Example: 'Health')" className="px-4 h-12 text-sm text-black outline-none w-full max-w-xs border border-r-0 border-[#DEDEDE] rounded-lg rounded-r-none" />
-
-                        <button onClick={() => setInputSrarch(inputValue)} className="h-12 px-4 rounded-lg rounded-l-none bg-[#FF444A] border-[#FF444A] hover:bg-[#984648] hover:border-[#984648] text-white text-sm font-semibold">Search</button>
-                    </div>
+        <div className="hero min-h-[75vh] mt-3 relative" style={{ backgroundImage: 'url(https://i.ibb.co/rMmzrQZ/Banner-bg.jpg)' }}>
+            <div className="bg-white h-full w-full absolute opacity-90"></div>
+            <div className="absolute">
+                <h1 className="text-5xl font-bold my-9">I Grow By Helping People In Need</h1>
+                <div className="flex justify-center items-center">
+                    <input type="text" onChange={handleInputChange} placeholder="Search Here... (For Example: 'Health')" className="px-4 h-12 text-sm text-black outline-none w-full max-w-xs border border-r-0 border-[#DEDEDE] rounded-lg rounded-r-none" />
+                    <button onClick={handleSearchClick} className="h-12 px-4 rounded-lg rounded-l-none bg-[#FF444A] border-[#FF444A] hover:bg-[#984648] hover:border-[#984648] text-white text-sm font-semibold">Search</button>
                 </div>
             </div>
         </div>

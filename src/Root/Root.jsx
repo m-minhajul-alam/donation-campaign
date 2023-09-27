@@ -4,13 +4,11 @@ import { createContext, useState } from "react";
 
 export const SearchValue = createContext("")
 
-
 const Root = () => {
-
     const [inputSearch, setInputSrarch] = useState("")
 
     return (
-        <div className="max-w-[1180px] mx-auto">
+        <div>
             <SearchValue.Provider value={[inputSearch, setInputSrarch]}>
                 <Nav></Nav>
                 <Outlet></Outlet>

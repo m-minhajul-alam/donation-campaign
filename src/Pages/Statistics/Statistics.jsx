@@ -6,22 +6,18 @@ const COLORS = ['#FF444A', '#00C49F'];
 
 const Statistics = () => {
     const datas = useLoaderData();
+
     const [donations, setDonetions] = useState([]);
-    console.log(donations);
 
     const totalPrice = datas.reduce((acc, item) => acc + item.price, 0);
-
-    const totalDonation = donations == null ? "0" : donations.reduce((acc, item) => acc + item.price, 0)
-    console.log(totalDonation);
-
-
+    const totalDonation = donations == null
+        ? "0"
+        : donations.reduce((acc, item) => acc + item.price, 0)
 
     useEffect(() => {
         const allDonation = JSON.parse(localStorage.getItem("donations"));
         setDonetions(allDonation)
     }, [])
-
-
 
     const data = [
         { name: 'total_donation', value: totalPrice },
@@ -34,29 +30,16 @@ const Statistics = () => {
         const y = cy + radius * Math.sin(-midAngle * (Math.PI / 180));
 
         return (
-            <text x={x} y={y} fill="white" textAnchor="middle" dominantBaseline="central">
-                {`${(percent * 100).toFixed(0)}%`}
-            </text>
+            <text x={x} y={y} fill="white" textAnchor="middle" dominantBaseline="central">{`${(percent * 100).toFixed(0)}%`}</text>
         );
     };
 
     return (
-        <div className="h-[80vh] flex flex-col items-center justify-center">
+        <div className="max-w-[1180px] mx-auto h-[80vh] flex flex-col items-center justify-center">
             <ResponsiveContainer width="80%" height={400}>
                 <PieChart>
-                    <Pie
-                        data={data}
-                        cx="50%"
-                        cy="50%"
-                        labelLine={false}
-                        outerRadius={150}
-                        fill="#8884d8"
-                        dataKey="value"
-                        label={renderCustomizedLabel}
-                    >
-                        {data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                        ))}
+                    <Pie data={data} cx="50%" cy="50%" labelLine={false} outerRadius={150} fill="#8884d8" dataKey="value" label={renderCustomizedLabel}>
+                        {data.map((entry, index) => (<Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />))}
                     </Pie>
                 </PieChart>
             </ResponsiveContainer>

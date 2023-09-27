@@ -39,9 +39,6 @@ const donationCampaignRouter = createBrowserRouter([
   }
 ])
 
-
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
