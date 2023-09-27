@@ -36,7 +36,7 @@ const CardDetails = () => {
     }
 
     return (
-        <div className="my-7 max-w-[1180px] mx-auto">
+        <div className="my-7 w-11/12 lg:max-w-[1180px] mx-auto">
             <div className="relative">
                 <img src={photo} alt="Your Image" className="w-full h-full rounded lg:rounded-xl" />
                 <div className="absolute inset-0 bg-black opacity-50 mt-auto h-11 lg:h-24 rounded-b-xl"></div>

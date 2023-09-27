@@ -6,3 +6,4 @@
 - The website has a clear and compelling call to action button that says Donate Now.
 - It also has a pie chart that shows how much money you donate.
 - It has a search bar on banner section where you can search by the category name.
+- Relode the website by clicking logo.

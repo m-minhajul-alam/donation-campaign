@@ -35,10 +35,10 @@ const Statistics = () => {
     };
 
     return (
-        <div className="max-w-[1180px] mx-auto h-[80vh] flex flex-col items-center justify-center">
+        <div className="h-[80vh] flex flex-col items-center justify-center">
             <ResponsiveContainer width="80%" height={400}>
                 <PieChart>
-                    <Pie data={data} cx="50%" cy="50%" labelLine={false} outerRadius={150} fill="#8884d8" dataKey="value" label={renderCustomizedLabel}>
+                    <Pie data={data} cx="50%" cy="50%" labelLine={false} outerRadius={128} fill="#8884d8" dataKey="value" label={renderCustomizedLabel}>
                         {data.map((entry, index) => (<Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />))}
                     </Pie>
                 </PieChart>

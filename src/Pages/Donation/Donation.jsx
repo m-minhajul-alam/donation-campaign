@@ -16,7 +16,7 @@ const Donation = () => {
     }, []);
 
     return (
-        <div className="my-8 max-w-[1180px] mx-auto">
+        <div className="my-8 w-11/12 lg:max-w-[1180px] mx-auto">
             {
                 noFound
                     ? <p className="h-[80vh] flex justify-center items-center">{noFound}</p>
